@@ -56,9 +56,14 @@ export default function Navigation() {
         ].join(' ')}
         data-surface="dark"
       >
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-5">
+        <div className="max-w-7xl mx-auto px-4 py-2.5 lg:px-6 lg:py-4 flex items-center justify-between gap-4 lg:gap-5">
           <Link href="/khadane" aria-label="KHADANE home" className="shrink-0">
-            <Wordmark surface="dark" size={scrolled ? 118 : 132} priority />
+            <span className="block lg:hidden">
+              <Wordmark surface="dark" size={96} priority />
+            </span>
+            <span className="hidden lg:block">
+              <Wordmark surface="dark" size={scrolled ? 118 : 132} priority />
+            </span>
           </Link>
 
           <ul className="hidden lg:flex items-center gap-1">
@@ -94,17 +99,17 @@ export default function Navigation() {
             <LanguageSwitcher />
           </div>
 
-          <div className="lg:hidden flex items-center gap-3">
+          <div className="lg:hidden flex items-center gap-2">
             <Search />
             <button
               type="button"
-              className="flex flex-col gap-1.5 p-2"
+              className="flex h-9 w-9 flex-col items-center justify-center gap-1.5"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
-              <span className="block w-6 h-px bg-warm-white" />
-              <span className="block w-6 h-px bg-warm-white" />
-              <span className="block w-4 h-px bg-warm-white ml-auto" />
+              <span className="block w-5 h-px bg-warm-white" />
+              <span className="block w-5 h-px bg-warm-white" />
+              <span className="block w-3.5 h-px bg-warm-white ml-1.5" />
             </button>
           </div>
         </div>
