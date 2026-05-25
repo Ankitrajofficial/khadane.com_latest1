@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "collection": "Colección",
+    "formats": "Formatos",
+    "quarry": "La Cantera",
+    "yard": "El Taller",
+    "fieldNotes": "Notas de Campo",
+    "group": "El Grupo",
+    "gallery": "Galería",
+    "enquire": "Consulta",
+    "languageSwitcher": "Idioma"
+  },
+  "actions": {
+    "enquire": "Consulta",
+    "enquireAboutThis": "Consulta sobre esta piedra",
+    "downloadDatasheet": "Ficha técnica (PDF)",
+    "requestSample": "Solicitar una muestra",
+    "saveToList": "Añadir a la lista",
+    "viewAll": "Ver todo",
+    "learnMore": "Saber más",
+    "backToCollection": "Volver a la Colección",
+    "backToFormats": "Volver a los Formatos",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "close": "Cerrar",
+    "submit": "Enviar",
+    "cancel": "Cancelar"
+  },
+  "footer": {
+    "copyright": "© 2026 KHADANE™ · Una división de Mohan Lal & Sons (Dhakar Stones Group), Bijolia, Rajasthan · Desde 1972",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "contact": "exports@khadane.com"
+  }
+}

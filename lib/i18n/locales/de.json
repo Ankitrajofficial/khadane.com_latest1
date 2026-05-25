@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "collection": "Kollektion",
+    "formats": "Formate",
+    "quarry": "Der Steinbruch",
+    "yard": "Der Hof",
+    "fieldNotes": "Notizen",
+    "group": "Die Gruppe",
+    "gallery": "Galerie",
+    "enquire": "Anfrage",
+    "languageSwitcher": "Sprache"
+  },
+  "actions": {
+    "enquire": "Anfrage senden",
+    "enquireAboutThis": "Anfrage zu diesem Stein",
+    "downloadDatasheet": "Datenblatt (PDF)",
+    "requestSample": "Muster anfordern",
+    "saveToList": "Zur Liste hinzufügen",
+    "viewAll": "Alle anzeigen",
+    "learnMore": "Mehr erfahren",
+    "backToCollection": "Zurück zur Kollektion",
+    "backToFormats": "Zurück zu den Formaten",
+    "next": "Weiter",
+    "previous": "Zurück",
+    "close": "Schließen",
+    "submit": "Senden",
+    "cancel": "Abbrechen"
+  },
+  "footer": {
+    "copyright": "© 2026 KHADANE™ · Eine Sparte von Mohan Lal & Sons (Dhakar Stones Group), Bijolia, Rajasthan · Seit 1972",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "contact": "exports@khadane.com"
+  }
+}

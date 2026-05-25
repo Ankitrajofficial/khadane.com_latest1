@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "collection": "石材系列",
+    "formats": "形状规格",
+    "quarry": "采石场",
+    "yard": "加工厂",
+    "fieldNotes": "现场笔记",
+    "group": "集团",
+    "gallery": "图库",
+    "enquire": "询价",
+    "languageSwitcher": "语言"
+  },
+  "actions": {
+    "enquire": "询价",
+    "enquireAboutThis": "询问此款石材",
+    "downloadDatasheet": "技术参数 (PDF)",
+    "requestSample": "申请样品",
+    "saveToList": "加入清单",
+    "viewAll": "查看全部",
+    "learnMore": "了解更多",
+    "backToCollection": "返回石材系列",
+    "backToFormats": "返回形状规格",
+    "next": "下一个",
+    "previous": "上一个",
+    "close": "关闭",
+    "submit": "提交",
+    "cancel": "取消"
+  },
+  "footer": {
+    "copyright": "© 2026 KHADANE™ · Mohan Lal & Sons (Dhakar Stones Group) 旗下品牌,印度拉贾斯坦邦比约利亚 · 自 1972 年起",
+    "privacy": "隐私",
+    "terms": "条款",
+    "contact": "exports@khadane.com"
+  }
+}

@@ -1,0 +1,2662 @@
+/* ============================================================
+   KHADANE™ v3.1 — Animation & Component CSS
+   ────────────────────────────────────────────────────────────
+   Locked v1.0 KHADANE palette holds throughout.
+   All 15 animation effects respect prefers-reduced-motion: reduce.
+   ============================================================ */
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Italic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-MediumItalic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/CormorantGaramond-BoldItalic.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter Tight';
+  src: url('/fonts/Inter-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KHADANE Cormorant Subset';
+  src: url('/fonts/khadane/CormorantGaramond-Italic_subset.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'KHADANE Devanagari Subset';
+  src: url('/fonts/khadane/KohinoorDevanagari-Regular_subset.cff') format('cff');
+}
+
+[data-site='khadane'] ::selection {
+  background: #B8962E;
+  color: #111111;
+}
+
+[data-site='khadane'] :focus-visible {
+  outline: 2px solid #B8962E;
+  outline-offset: 3px;
+}
+
+[data-site='khadane'] input,
+[data-site='khadane'] textarea,
+[data-site='khadane'] select {
+  caret-color: #B8962E;
+}
+
+[data-site='khadane'] input::placeholder,
+[data-site='khadane'] textarea::placeholder {
+  color: rgba(61, 43, 26, 0.45);
+}
+
+[data-site='khadane'] input:-webkit-autofill,
+[data-site='khadane'] textarea:-webkit-autofill,
+[data-site='khadane'] select:-webkit-autofill {
+  -webkit-text-fill-color: #111111;
+  -webkit-box-shadow: 0 0 0 1000px #F0EDE6 inset;
+}
+
+[data-site='khadane'] {
+  scrollbar-color: #B8962E #E8E3D7;
+}
+
+[data-site='khadane'] ::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+[data-site='khadane'] ::-webkit-scrollbar-track {
+  background: #E8E3D7;
+}
+
+[data-site='khadane'] ::-webkit-scrollbar-thumb {
+  background: #B8962E;
+}
+
+[data-site='khadane'] ::-webkit-scrollbar-thumb:hover {
+  background: #3D2B1A;
+}
+
+[data-site='khadane'] a {
+  text-decoration-color: rgba(184, 150, 46, 0.45);
+}
+
+[data-site='khadane'] hr {
+  border-color: rgba(184, 150, 46, 0.3);
+}
+
+[data-site='khadane'] input[type='number']::-webkit-outer-spin-button,
+[data-site='khadane'] input[type='number']::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
+
+[data-site='khadane'] input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+/* ────────────────────────────────────────────────────────────
+   1. PALETTE — v1.0 LOCKED
+   ──────────────────────────────────────────────────────────── */
+
+:root {
+  /* Locked v1.0 KHADANE palette — five colours, no additions */
+  --khadane-obsidian: #111111;
+  --khadane-stone-linen: #E8E3D7;
+  --khadane-tobacco: #3D2B1A;
+  --khadane-quarry-gold: #B8962E;
+  --khadane-warm-white: #F0EDE6;
+
+  /* Locked derived values (alpha variants, not new tokens) */
+  --khadane-obsidian-72: rgba(17, 17, 17, 0.72);
+  --khadane-obsidian-32: rgba(17, 17, 17, 0.32);
+  --khadane-quarry-gold-32: rgba(184, 150, 46, 0.32);
+  --khadane-quarry-gold-12: rgba(184, 150, 46, 0.12);
+
+  /* Animation timing constants */
+  --khadane-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --khadane-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --khadane-duration-fast: 200ms;
+  --khadane-duration-normal: 400ms;
+  --khadane-duration-slow: 600ms;
+  --khadane-duration-deliberate: 800ms;
+}
+
+/* ────────────────────────────────────────────────────────────
+   2. TYPOGRAPHY — JUSTIFIED BODY THROUGHOUT
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-body-prose {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  text-justify: inter-word;
+}
+
+.khadane-caption-italic-gold {
+  font-style: italic;
+  color: var(--khadane-quarry-gold);
+  font-size: 0.95em;
+  letter-spacing: 0.01em;
+}
+
+.khadane-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--khadane-quarry-gold);
+}
+
+/* ────────────────────────────────────────────────────────────
+   3. LAYOUT FOUNDATION — shared KHADANE page structure
+   Restores the page-level layout, grids, cards, tables, and
+   CTA patterns consumed throughout /app/khadane.
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-section,
+.khadane-page-header {
+  padding: clamp(4rem, 7vw, 7rem) 0;
+}
+
+.khadane-page-header {
+  padding-top: clamp(7rem, 12vw, 10rem);
+  border-bottom: 1px solid var(--khadane-quarry-gold-12);
+}
+
+.khadane-prose-container {
+  width: min(100%, 76rem);
+  margin: 0 auto;
+  padding-inline: clamp(1.25rem, 3vw, 2.75rem);
+}
+
+.khadane-page-headline,
+.khadane-section-title,
+.khadane-hero__headline,
+.khadane-quarry-hero__headline,
+.khadane-variety-hero__headline {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  color: var(--khadane-obsidian);
+}
+
+.khadane-page-headline,
+.khadane-hero__headline,
+.khadane-quarry-hero__headline,
+.khadane-variety-hero__headline {
+  font-size: clamp(3rem, 6vw, 5.75rem);
+}
+
+.khadane-section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: 1.25rem;
+}
+
+.khadane-section-title--small {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+}
+
+.khadane-page-subline,
+.khadane-hero__subline,
+.khadane-quarry-hero__subline,
+.khadane-variety-hero__subline {
+  max-width: 48rem;
+  margin: 1rem 0 0;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.65;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-page-subline,
+.khadane-hero__subline,
+.khadane-quarry-hero__subline,
+.khadane-variety-hero__subline,
+.khadane-body-prose--lead,
+.khadane-caption-italic-gold,
+.khadane-group-hero__caption,
+.khadane-founding-list__caption,
+.khadane-teaser-card__subline,
+.khadane-format-card__caption,
+.khadane-gallery-category-card__caption,
+.khadane-field-note-card__excerpt {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.khadane-body-prose,
+.khadane-body-prose p {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.7vw, 1.16rem);
+  line-height: 1.85;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-body-prose + .khadane-body-prose,
+.khadane-prose-container > p + p,
+.khadane-prose-container > .khadane-body-prose + .khadane-body-prose,
+.khadane-prose-container > .khadane-body-prose + p,
+.khadane-prose-container > p + .khadane-body-prose {
+  margin-top: 1.2rem;
+}
+
+.khadane-body-prose--lead {
+  font-size: clamp(1.16rem, 2vw, 1.45rem);
+  line-height: 1.72;
+  color: var(--khadane-obsidian);
+}
+
+.khadane-body-prose--placeholder,
+.khadane-body-prose--provenance {
+  color: var(--khadane-tobacco);
+  opacity: 0.82;
+}
+
+.khadane-eyebrow,
+.khadane-eyebrow-inline {
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+}
+
+.khadane-eyebrow {
+  display: block;
+  margin: 0 0 0.9rem;
+}
+
+.khadane-eyebrow-inline {
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--khadane-quarry-gold);
+}
+
+.khadane-hero,
+.khadane-quarry-hero,
+.khadane-variety-hero {
+  width: min(100%, 88rem);
+  margin: 0 auto;
+  padding: clamp(7rem, 10vw, 9rem) clamp(1.25rem, 3vw, 2.75rem) 3rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 36rem);
+  gap: clamp(1.75rem, 4vw, 4rem);
+  align-items: end;
+}
+
+.khadane-hero__image-wrap,
+.khadane-quarry-hero__image-wrap,
+.khadane-variety-hero__image-wrap {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--khadane-quarry-gold-12);
+  background: var(--khadane-stone-linen);
+  min-height: clamp(20rem, 48vw, 42rem);
+}
+
+.khadane-hero__image-wrap > *,
+.khadane-quarry-hero__image-wrap > *,
+.khadane-variety-hero__image-wrap > * {
+  width: 100%;
+  height: 100%;
+}
+
+.khadane-hero__content,
+.khadane-quarry-hero__content,
+.khadane-variety-hero__content {
+  align-self: center;
+}
+
+.khadane-hero--home {
+  min-height: auto;
+  padding-top: clamp(6.25rem, 8vw, 7.25rem);
+  padding-bottom: clamp(1.25rem, 2.5vw, 2.25rem);
+  grid-template-columns: minmax(0, 1.02fr) minmax(18rem, 0.82fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+}
+
+.khadane-hero--home .khadane-hero__image-wrap {
+  min-height: clamp(22rem, 45svh, 34rem);
+  border-color: var(--khadane-quarry-gold-32);
+  box-shadow: 0 1.25rem 3.5rem rgba(17, 17, 17, 0.08);
+}
+
+.khadane-hero--home .khadane-hero__content {
+  max-width: 36rem;
+}
+
+.khadane-hero--home .khadane-hero__headline {
+  font-size: clamp(3.3rem, 6vw, 5.65rem);
+}
+
+.khadane-hero--home .khadane-hero__subline {
+  max-width: 35rem;
+  font-size: clamp(1.08rem, 1.9vw, 1.28rem);
+  line-height: 1.58;
+}
+
+.khadane-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: clamp(1.35rem, 2.5vw, 1.9rem);
+}
+
+.khadane-hero-scale {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin: clamp(1.5rem, 3vw, 2.15rem) 0 0;
+  padding: 1rem 0 0;
+  border-top: 1px solid var(--khadane-quarry-gold-32);
+}
+
+.khadane-hero-scale div {
+  padding-right: 1rem;
+}
+
+.khadane-hero-scale dt {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  line-height: 1;
+  color: var(--khadane-obsidian);
+}
+
+.khadane-hero-scale dd {
+  margin: 0.35rem 0 0;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-section--prose {
+  padding-top: clamp(0.65rem, 1.5vw, 1.2rem);
+  padding-bottom: clamp(3rem, 5vw, 4.75rem);
+}
+
+.khadane-section--prose .khadane-prose-container {
+  display: grid;
+  width: min(100%, 88rem);
+  grid-template-columns: minmax(0, 1.02fr) minmax(18rem, 0.82fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+  padding-top: clamp(1.45rem, 2.6vw, 2rem);
+  border-top: 1px solid var(--khadane-quarry-gold-32);
+}
+
+.khadane-section--prose .khadane-body-prose,
+.khadane-section--prose .khadane-body-prose--lead {
+  max-width: none;
+  text-align: left;
+  text-wrap: pretty;
+}
+
+.khadane-section--prose .khadane-body-prose {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.16rem, 1.55vw, 1.32rem);
+  line-height: 1.62;
+}
+
+.khadane-section--prose .khadane-body-prose--lead {
+  font-size: clamp(1.16rem, 1.55vw, 1.32rem);
+  line-height: 1.62;
+}
+
+.khadane-section--prose .khadane-body-prose + .khadane-body-prose {
+  margin-top: 0;
+}
+
+.khadane-hero-media-caption {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.78rem 0.9rem;
+  background: rgba(17, 17, 17, 0.72);
+  color: var(--khadane-warm-white);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.khadane-group-hero__caption {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  color: var(--khadane-quarry-gold);
+}
+
+.khadane-credentials-band {
+  background: #3D2B1A;
+  color: #F0EDE6;
+  border-block: 1px solid rgba(184, 150, 46, 0.32);
+}
+
+.khadane-credentials-band img {
+  height: auto;
+}
+
+.khadane-variety-hero__hindi {
+  margin: 0.6rem 0 0;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  color: var(--khadane-tobacco);
+}
+
+.khadane-collection-counts,
+.khadane-trade-aliases,
+.khadane-signature,
+.khadane-provenance,
+.khadane-group-credit,
+.khadane-spec-footnote {
+  margin-top: 1.4rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-collection-counts,
+.khadane-cross-links,
+.khadane-desk-actions,
+.khadane-saved-varieties {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1rem;
+  align-items: center;
+}
+
+.khadane-divider {
+  color: var(--khadane-quarry-gold);
+}
+
+.khadane-link-gold {
+  color: var(--khadane-quarry-gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--khadane-quarry-gold-32);
+}
+
+.khadane-link-gold:hover {
+  color: var(--khadane-tobacco);
+  border-bottom-color: var(--khadane-tobacco);
+}
+
+.khadane-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 3.1rem;
+  padding: 0.9rem 1.35rem;
+  border: 1px solid var(--khadane-obsidian);
+  background: transparent;
+  color: var(--khadane-obsidian);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.khadane-button:hover {
+  background: var(--khadane-obsidian);
+  color: var(--khadane-warm-white);
+}
+
+.khadane-button--primary {
+  background: var(--khadane-obsidian);
+  color: var(--khadane-warm-white);
+}
+
+.khadane-button--primary:hover {
+  background: var(--khadane-tobacco);
+  border-color: var(--khadane-tobacco);
+}
+
+.khadane-button--ghost {
+  border-color: var(--khadane-obsidian-32);
+}
+
+.khadane-founding-list,
+.khadane-villages-list,
+.khadane-typical-use-list {
+  list-style: none;
+  margin: 1.6rem 0 0;
+  padding: 0;
+}
+
+.khadane-founding-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.khadane-founding-list__link,
+.khadane-villages-list__item,
+.khadane-typical-use-list__item {
+  display: block;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--khadane-quarry-gold-12);
+  background: color-mix(in srgb, var(--khadane-warm-white) 94%, white);
+  color: inherit;
+  text-decoration: none;
+}
+
+.khadane-founding-list__name {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--khadane-obsidian);
+}
+
+.khadane-founding-list__caption {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-teaser-grid,
+.khadane-variety-grid,
+.khadane-format-grid,
+.khadane-related-grid,
+.khadane-gallery-category-grid,
+.khadane-field-notes-grid,
+.khadane-photo-grid,
+.khadane-tile-grid,
+.khadane-verticals-grid,
+.khadane-yard-steps {
+  width: min(100%, 76rem);
+  margin: 0 auto;
+  padding-inline: clamp(1.25rem, 3vw, 2.75rem);
+  display: grid;
+  gap: 1.4rem;
+}
+
+.khadane-teaser-grid,
+.khadane-variety-grid,
+.khadane-format-grid,
+.khadane-related-grid,
+.khadane-gallery-category-grid,
+.khadane-field-notes-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.khadane-photo-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.khadane-tile-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.khadane-section--home-images {
+  padding-top: clamp(4.5rem, 7vw, 6.5rem);
+}
+
+.khadane-home-images__header {
+  position: relative;
+  width: min(100%, 76rem);
+  margin-bottom: clamp(0.75rem, 1.4vw, 1.2rem);
+  text-align: center;
+}
+
+.khadane-home-images__header::after {
+  content: '';
+  display: block;
+  width: min(12rem, 34vw);
+  height: 1px;
+  margin: clamp(1rem, 2vw, 1.35rem) auto 0;
+  background: var(--khadane-quarry-gold-32);
+}
+
+.khadane-home-images__header .khadane-eyebrow {
+  margin-bottom: 0.75rem;
+}
+
+.khadane-home-images__header .khadane-section-title {
+  margin-bottom: 0;
+}
+
+.khadane-home-images__subline {
+  max-width: 34rem;
+  margin: 0.85rem auto 0;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: clamp(0.9rem, 1.15vw, 1rem);
+  line-height: 1.65;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-home-proof {
+  box-sizing: border-box;
+  width: min(100%, 76rem);
+  margin: 0 auto;
+  padding-inline: clamp(1.25rem, 3vw, 2.75rem);
+}
+
+.khadane-home-proof__feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(17rem, 0.55fr);
+  border: 1px solid var(--khadane-quarry-gold-32);
+  background: color-mix(in srgb, var(--khadane-warm-white) 97%, white);
+  box-shadow: 0 1.4rem 4rem rgba(17, 17, 17, 0.07);
+}
+
+.khadane-home-proof__feature-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--khadane-stone-linen);
+  min-height: clamp(25rem, 43vw, 38rem);
+}
+
+.khadane-home-proof__feature-image > * {
+  width: 100%;
+  height: 100%;
+}
+
+.khadane-home-proof__feature-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(1.4rem, 2.4vw, 2.15rem);
+  border-left: 1px solid var(--khadane-quarry-gold-12);
+}
+
+.khadane-home-proof__feature-copy h3,
+.khadane-home-proof-card h3 {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  line-height: 1.02;
+  color: var(--khadane-obsidian);
+}
+
+.khadane-home-proof__feature-copy h3 {
+  max-width: 8ch;
+  font-size: clamp(2.25rem, 4vw, 3.65rem);
+}
+
+.khadane-home-proof__feature-copy ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.khadane-home-proof__feature-copy li {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--khadane-quarry-gold-32);
+  background: var(--khadane-warm-white);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-home-proof__feature-copy dt,
+.khadane-home-proof-card__content > span {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--khadane-quarry-gold);
+}
+
+.khadane-home-proof__desk-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  width: fit-content;
+  margin-top: 1.35rem;
+  color: var(--khadane-obsidian);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--khadane-quarry-gold);
+}
+
+.khadane-home-proof__image-label {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0.85rem;
+  background: rgba(17, 17, 17, 0.72);
+  color: var(--khadane-warm-white);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.khadane-home-proof__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 0.9rem;
+  background: transparent;
+  border: 1px solid var(--khadane-quarry-gold-12);
+  border-top: 1px solid var(--khadane-quarry-gold-12);
+  padding: 0.9rem;
+}
+
+.khadane-home-proof-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  background: var(--khadane-warm-white);
+  border: 1px solid var(--khadane-quarry-gold-12);
+}
+
+.khadane-home-proof-card__image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 5 / 4;
+  background: var(--khadane-stone-linen);
+}
+
+.khadane-home-proof-card__image > * {
+  width: 100%;
+  height: 100%;
+}
+
+.khadane-home-proof__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--khadane-duration-normal) var(--khadane-ease-out);
+}
+
+.khadane-home-proof-card:hover .khadane-home-proof__photo {
+  transform: scale(1.035);
+}
+
+.khadane-home-proof-card__content {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem;
+  background: linear-gradient(
+    to top,
+    rgba(17, 17, 17, 0.76),
+    rgba(17, 17, 17, 0.18)
+  );
+  color: var(--khadane-warm-white);
+}
+
+.khadane-home-proof-card .khadane-eyebrow {
+  margin: 0;
+  font-size: 0.62rem;
+  color: var(--khadane-warm-white);
+}
+
+.khadane-proof-image-button {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: zoom-in;
+}
+
+.khadane-home-proof__card-wall {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
+  gap: clamp(1.15rem, 2.2vw, 2rem);
+  align-items: stretch;
+  overflow: clip;
+}
+
+.khadane-home-proof__main-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  min-height: clamp(28rem, 48vw, 41rem);
+  background: var(--khadane-stone-linen);
+  border: 1px solid var(--khadane-quarry-gold-32);
+  box-shadow: 0 1.4rem 4rem rgba(17, 17, 17, 0.07);
+}
+
+.khadane-home-proof__main-card > .khadane-home-proof__photo,
+.khadane-home-proof__main-card > .placeholder-base {
+  width: 100%;
+  height: 100%;
+}
+
+.khadane-home-proof__deck {
+  --deck-card-width: clamp(6.35rem, 8.4vw, 9.1rem);
+  --deck-overlap: clamp(0.8rem, 1.35vw, 1.35rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  row-gap: clamp(1.4rem, 3vw, 3rem);
+  min-width: 0;
+  padding: clamp(1.1rem, 2vw, 1.7rem) 0 clamp(1rem, 2vw, 1.5rem)
+    var(--deck-overlap);
+}
+
+.khadane-home-proof__deck .khadane-home-proof-card {
+  --card-rotation: 0deg;
+  --card-lift: 0rem;
+  position: relative;
+  z-index: 1;
+  display: block;
+  flex: 0 0 var(--deck-card-width);
+  overflow: hidden;
+  min-height: 0;
+  margin-left: calc(var(--deck-overlap) * -1);
+  aspect-ratio: 3 / 4;
+  background: var(--khadane-stone-linen);
+  border: 1px solid var(--khadane-quarry-gold-24);
+  box-shadow: 0 1rem 2.2rem rgba(17, 17, 17, 0.11);
+  transform-origin: 50% 120%;
+  transform: rotate(var(--card-rotation)) translateY(var(--card-lift));
+  transition:
+    box-shadow var(--khadane-duration-normal) var(--khadane-ease-out),
+    transform var(--khadane-duration-normal) var(--khadane-ease-out);
+}
+
+.khadane-home-proof__deck .khadane-home-proof-card:nth-child(1),
+.khadane-home-proof__deck .khadane-home-proof-card:nth-child(6) {
+  margin-left: 0;
+}
+
+.khadane-home-proof__deck .khadane-home-proof-card:nth-child(3n + 1) {
+  --card-rotation: -4.5deg;
+}
+
+.khadane-home-proof__deck .khadane-home-proof-card:nth-child(3n + 2) {
+  --card-rotation: 2.8deg;
+}
+
+.khadane-home-proof__deck .khadane-home-proof-card:nth-child(4n) {
+  --card-rotation: 4.2deg;
+}
+
+.khadane-home-proof__deck .khadane-home-proof-card:nth-child(5n) {
+  --card-rotation: -2.4deg;
+}
+
+.khadane-home-proof__deck .khadane-home-proof-card:hover {
+  --card-lift: -0.45rem;
+  z-index: 3;
+  box-shadow: 0 1.5rem 2.8rem rgba(17, 17, 17, 0.18);
+}
+
+.khadane-home-proof__deck .khadane-home-proof-card > .khadane-home-proof__photo,
+.khadane-home-proof__deck .khadane-home-proof-card > .placeholder-base {
+  width: 100%;
+  height: 100%;
+}
+
+.khadane-home-proof__deck .khadane-home-proof-card__content {
+  min-height: 3.25rem;
+}
+
+.khadane-home-proof__carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(0.55rem, 1.4vw, 1rem);
+}
+
+.khadane-home-proof__stage {
+  position: relative;
+  min-width: 0;
+  min-height: clamp(28rem, 52vw, 44rem);
+  overflow: hidden;
+  isolation: isolate;
+  touch-action: pan-y;
+  perspective: 80rem;
+}
+
+.khadane-home-proof__shuffle-card {
+  appearance: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: block;
+  overflow: hidden;
+  width: clamp(8rem, 12vw, 12.25rem);
+  aspect-ratio: 3 / 4;
+  border: 1px solid var(--khadane-quarry-gold-24);
+  padding: 0;
+  background: var(--khadane-stone-linen);
+  box-shadow: 0 1rem 2.3rem rgba(17, 17, 17, 0.12);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  backface-visibility: hidden;
+  transform: translate3d(-50%, -50%, 0) scale(0.52);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  transition:
+    opacity 620ms var(--khadane-ease-out),
+    box-shadow 700ms var(--khadane-ease-out),
+    filter 700ms var(--khadane-ease-out),
+    transform 760ms var(--khadane-ease-out),
+    width 760ms var(--khadane-ease-out);
+}
+
+.khadane-home-proof__shuffle-card.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.khadane-home-proof__shuffle-card.is-active {
+  z-index: 20;
+  width: min(68vw, 48rem);
+  aspect-ratio: 4 / 3;
+  cursor: grab;
+  box-shadow: 0 1.5rem 4.6rem rgba(17, 17, 17, 0.16);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.khadane-home-proof__shuffle-card[data-offset='-1'] {
+  z-index: 13;
+  transform: translate3d(-50%, -50%, 0) translateX(-22rem) translateY(0.4rem)
+    rotate(-8deg) scale(0.94);
+}
+
+.khadane-home-proof__shuffle-card[data-offset='1'] {
+  z-index: 13;
+  transform: translate3d(-50%, -50%, 0) translateX(22rem) translateY(0.4rem)
+    rotate(8deg) scale(0.94);
+}
+
+.khadane-home-proof__shuffle-card[data-offset='-2'] {
+  z-index: 12;
+  transform: translate3d(-50%, -50%, 0) translateX(-28.5rem) translateY(1.1rem)
+    rotate(-13deg) scale(0.86);
+}
+
+.khadane-home-proof__shuffle-card[data-offset='2'] {
+  z-index: 12;
+  transform: translate3d(-50%, -50%, 0) translateX(28.5rem) translateY(1.1rem)
+    rotate(13deg) scale(0.86);
+}
+
+.khadane-home-proof__shuffle-card[data-offset='-3'] {
+  z-index: 11;
+  transform: translate3d(-50%, -50%, 0) translateX(-34rem) translateY(1.85rem)
+    rotate(-17deg) scale(0.76);
+}
+
+.khadane-home-proof__shuffle-card[data-offset='3'] {
+  z-index: 11;
+  transform: translate3d(-50%, -50%, 0) translateX(34rem) translateY(1.85rem)
+    rotate(17deg) scale(0.76);
+}
+
+.khadane-home-proof__shuffle-card:hover {
+  box-shadow: 0 1.45rem 3rem rgba(17, 17, 17, 0.2);
+}
+
+.khadane-home-proof__shuffle-card > .khadane-home-proof__photo,
+.khadane-home-proof__shuffle-card > .placeholder-base {
+  width: 100%;
+  height: 100%;
+}
+
+.khadane-home-proof__shuffle-card.is-active .khadane-home-proof__photo {
+  transform: none;
+}
+
+.khadane-home-proof__shuffle-card:not(.is-active) .khadane-home-proof-card__content {
+  padding: 0.65rem;
+}
+
+.khadane-home-proof__shuffle-card:not(.is-active) .khadane-home-proof-card__content > span {
+  font-size: 0.56rem;
+}
+
+.khadane-home-proof__shuffle-card:not(.is-active) .khadane-eyebrow {
+  max-width: 8ch;
+  font-size: 0.55rem;
+  line-height: 1.2;
+}
+
+.khadane-home-proof__shuffle-nav {
+  appearance: none;
+  display: grid;
+  place-items: center;
+  width: 2.85rem;
+  height: 4.35rem;
+  border: 1px solid var(--khadane-quarry-gold-32);
+  background: color-mix(in srgb, var(--khadane-warm-white) 88%, white);
+  color: var(--khadane-obsidian);
+  font-size: 2.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.khadane-home-proof__progress {
+  display: flex;
+  justify-content: center;
+  gap: 0.42rem;
+  margin-top: 1rem;
+}
+
+.khadane-home-proof__progress button {
+  appearance: none;
+  width: 1.65rem;
+  height: 0.3rem;
+  border: 0;
+  padding: 0;
+  background: var(--khadane-quarry-gold-24);
+  cursor: pointer;
+}
+
+.khadane-home-proof__progress button.is-active {
+  background: var(--khadane-quarry-gold);
+}
+
+.khadane-home-proof__progress span {
+  display: block;
+}
+
+.khadane-proof-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.8rem, 2vw, 1.5rem);
+}
+
+.khadane-proof-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(17, 17, 17, 0.72);
+}
+
+.khadane-proof-lightbox__panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: min(96vw, 82rem);
+  max-height: 92vh;
+  overflow: hidden;
+  background: var(--khadane-warm-white);
+  border: 1px solid var(--khadane-quarry-gold-32);
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.34);
+}
+
+.khadane-proof-lightbox__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem clamp(1rem, 2vw, 1.5rem);
+  border-bottom: 1px solid var(--khadane-quarry-gold-12);
+}
+
+.khadane-proof-lightbox__topbar h2 {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.65rem, 3vw, 2.8rem);
+  line-height: 0.96;
+  color: var(--khadane-obsidian);
+}
+
+.khadane-proof-lightbox__topbar .khadane-eyebrow {
+  margin-bottom: 0.25rem;
+}
+
+.khadane-proof-lightbox__close,
+.khadane-proof-lightbox__nav {
+  appearance: none;
+  border: 1px solid var(--khadane-quarry-gold-32);
+  background: var(--khadane-warm-white);
+  color: var(--khadane-obsidian);
+  cursor: pointer;
+}
+
+.khadane-proof-lightbox__close {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 auto;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.khadane-proof-lightbox__stage {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 0;
+  padding: clamp(0.75rem, 1.5vw, 1.1rem);
+  background: color-mix(in srgb, var(--khadane-stone-linen) 66%, white);
+}
+
+.khadane-proof-lightbox__image {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  height: min(64vh, 44rem);
+  background: var(--khadane-stone-linen);
+}
+
+.khadane-proof-lightbox__image > * {
+  width: 100%;
+  height: 100%;
+}
+
+.khadane-proof-lightbox__image .khadane-home-proof__photo {
+  object-fit: contain;
+}
+
+.khadane-proof-lightbox__nav {
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 4rem;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.khadane-proof-lightbox__strip {
+  display: flex;
+  gap: 0.65rem;
+  overflow-x: auto;
+  padding: 0.85rem clamp(1rem, 2vw, 1.5rem) 1rem;
+  border-top: 1px solid var(--khadane-quarry-gold-12);
+  scrollbar-width: thin;
+}
+
+.khadane-proof-lightbox__thumb {
+  appearance: none;
+  position: relative;
+  flex: 0 0 clamp(6.5rem, 12vw, 9rem);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--khadane-quarry-gold-24);
+  padding: 0;
+  background: var(--khadane-stone-linen);
+  cursor: pointer;
+  opacity: 0.72;
+}
+
+.khadane-proof-lightbox__thumb.is-active {
+  border-color: var(--khadane-quarry-gold);
+  opacity: 1;
+}
+
+.khadane-proof-lightbox__thumb > * {
+  width: 100%;
+  height: 100%;
+}
+
+.khadane-proof-lightbox__thumb span {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 0.35rem 0.45rem;
+  background: rgba(17, 17, 17, 0.65);
+  color: var(--khadane-warm-white);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.khadane-home-photo-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.khadane-home-photo-card {
+  border: 1px solid var(--khadane-quarry-gold-12);
+  background: color-mix(in srgb, var(--khadane-warm-white) 96%, white);
+  color: var(--khadane-obsidian);
+  overflow: hidden;
+}
+
+.khadane-home-photo-card__image {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--khadane-quarry-gold-12);
+  background: var(--khadane-stone-linen);
+}
+
+.khadane-home-photo-card__image > * {
+  width: 100%;
+  height: 100%;
+}
+
+.khadane-home-photo-card__photo {
+  object-fit: cover;
+  object-position: center;
+}
+
+.khadane-home-photo-card__content {
+  padding: 1.15rem 1.2rem 1.25rem;
+}
+
+.khadane-home-photo-card__eyebrow {
+  margin-bottom: 0.55rem;
+}
+
+.khadane-home-photo-card__title {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 2.1vw, 2.1rem);
+  line-height: 1.02;
+  color: var(--khadane-obsidian);
+}
+
+.khadane-home-photo-card__caption {
+  margin: 0.65rem 0 0;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-verticals-grid,
+.khadane-yard-steps {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.khadane-variety-grid-wrap[data-filter='owned'] [data-tier='allied'],
+.khadane-variety-grid-wrap[data-filter='allied'] [data-tier='owned'] {
+  display: none;
+}
+
+.khadane-variety-card,
+.khadane-teaser-card,
+.khadane-format-card,
+.khadane-gallery-category-card,
+.khadane-field-note-card,
+.khadane-group-vertical,
+.khadane-yard-step,
+.khadane-tile,
+.khadane-gallery-category-card,
+.khadane-format-card,
+.khadane-field-note-card,
+.khadane-group-vertical {
+  height: 100%;
+  border: 1px solid var(--khadane-quarry-gold-12);
+  background: color-mix(in srgb, var(--khadane-warm-white) 96%, white);
+  color: var(--khadane-obsidian);
+}
+
+.khadane-teaser-card,
+.khadane-format-card,
+.khadane-gallery-category-card,
+.khadane-field-note-card,
+.khadane-group-vertical,
+.khadane-yard-step,
+.khadane-tile {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.khadane-variety-card__link,
+.khadane-format-card,
+.khadane-gallery-category-card,
+.khadane-field-note-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.khadane-variety-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.khadane-variety-card__image-wrap,
+.khadane-teaser-card__image-wrap,
+.khadane-format-card__image,
+.khadane-gallery-category-card__image,
+.khadane-field-note-card__image,
+.khadane-group-vertical__image,
+.khadane-yard-step__image,
+.khadane-tile__image,
+.khadane-figure__image {
+  overflow: hidden;
+  border-bottom: 1px solid var(--khadane-quarry-gold-12);
+  background: var(--khadane-stone-linen);
+}
+
+.khadane-variety-card__image-wrap > *,
+.khadane-teaser-card__image-wrap > *,
+.khadane-format-card__image > *,
+.khadane-gallery-category-card__image > *,
+.khadane-field-note-card__image > *,
+.khadane-group-vertical__image > *,
+.khadane-yard-step__image > *,
+.khadane-tile__image > *,
+.khadane-figure__image > * {
+  width: 100%;
+  height: 100%;
+}
+
+.khadane-variety-card__content,
+.khadane-teaser-card__content,
+.khadane-format-card__content,
+.khadane-gallery-category-card__content,
+.khadane-field-note-card__content,
+.khadane-group-vertical__content,
+.khadane-yard-step__content,
+.khadane-tile__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.1rem 1.15rem 1.2rem;
+}
+
+.khadane-variety-card__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.khadane-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.65rem;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--khadane-quarry-gold-32);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-badge--founding {
+  border-color: var(--khadane-quarry-gold);
+  color: var(--khadane-quarry-gold);
+}
+
+.khadane-variety-card__name,
+.khadane-teaser-card__title,
+.khadane-format-card__name,
+.khadane-gallery-category-card__name,
+.khadane-field-note-card__title,
+.khadane-tile__name,
+.khadane-yard-step__title {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  line-height: 1.02;
+  color: var(--khadane-obsidian);
+}
+
+.khadane-variety-card__name-hindi {
+  margin: -0.1rem 0 0;
+  font-size: 1rem;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-variety-card__subline,
+.khadane-variety-card__location,
+.khadane-teaser-card__meta,
+.khadane-format-card__caption,
+.khadane-gallery-category-card__meta,
+.khadane-field-note-card__meta,
+.khadane-tile__caption,
+.khadane-tile__meta {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-tile {
+  padding-bottom: 1rem;
+}
+
+.khadane-tile__name,
+.khadane-tile__caption,
+.khadane-tile__meta {
+  padding-inline: 1rem;
+}
+
+.khadane-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.khadane-filter-bar__button {
+  min-height: 2.65rem;
+  padding: 0.6rem 0.95rem;
+  border: 1px solid var(--khadane-obsidian-32);
+  background: transparent;
+  color: var(--khadane-tobacco);
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.khadane-filter-bar__button--active,
+.khadane-filter-bar__button:hover {
+  border-color: var(--khadane-obsidian);
+  background: var(--khadane-obsidian);
+  color: var(--khadane-warm-white);
+}
+
+.khadane-two-col {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+}
+
+.khadane-tech-spec {
+  margin: 0;
+  border-top: 1px solid var(--khadane-quarry-gold-12);
+}
+
+.khadane-tech-spec__row {
+  display: grid;
+  grid-template-columns: minmax(11rem, 15rem) 1fr;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--khadane-quarry-gold-12);
+}
+
+.khadane-tech-spec__label {
+  margin: 0;
+  font-size: 0.8rem;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--khadane-quarry-gold);
+}
+
+.khadane-tech-spec__value {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-spec-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--khadane-quarry-gold-12);
+  background: color-mix(in srgb, var(--khadane-warm-white) 96%, white);
+}
+
+.khadane-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.khadane-spec-table th,
+.khadane-spec-table td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid var(--khadane-quarry-gold-12);
+  text-align: left;
+  vertical-align: top;
+  color: var(--khadane-tobacco);
+}
+
+.khadane-spec-table th {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--khadane-quarry-gold);
+  background: color-mix(in srgb, var(--khadane-stone-linen) 78%, white);
+}
+
+.khadane-spec-table__primary {
+  color: var(--khadane-obsidian);
+  font-weight: 600;
+}
+
+.khadane-desk-rows {
+  margin: 0;
+  border-top: 1px solid var(--khadane-quarry-gold-12);
+}
+
+.khadane-desk-rows__row {
+  display: grid;
+  grid-template-columns: minmax(10rem, 14rem) 1fr;
+  gap: 1rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--khadane-quarry-gold-12);
+}
+
+.khadane-desk-rows__label {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--khadane-quarry-gold);
+}
+
+.khadane-desk-rows__value,
+.khadane-desk-rows__note {
+  color: var(--khadane-tobacco);
+}
+
+.khadane-figure {
+  width: min(100%, 76rem);
+  margin: 0 auto;
+  padding-inline: clamp(1.25rem, 3vw, 2.75rem);
+}
+
+.khadane-figure__caption {
+  margin-top: 0.85rem;
+  font-size: 0.94rem;
+  color: var(--khadane-tobacco);
+}
+
+@media (max-width: 1100px) {
+  .khadane-home-proof__shuffle-card.is-active {
+    width: min(72vw, 42rem);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='-1'] {
+    transform: translate3d(-50%, -50%, 0) translateX(-35vw) translateY(0.4rem)
+      rotate(-8deg) scale(0.92);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='1'] {
+    transform: translate3d(-50%, -50%, 0) translateX(35vw) translateY(0.4rem)
+      rotate(8deg) scale(0.92);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='-2'] {
+    transform: translate3d(-50%, -50%, 0) translateX(-43vw) translateY(1.1rem)
+      rotate(-13deg) scale(0.82);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='2'] {
+    transform: translate3d(-50%, -50%, 0) translateX(43vw) translateY(1.1rem)
+      rotate(13deg) scale(0.82);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='-3'],
+  .khadane-home-proof__shuffle-card[data-offset='3'] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .khadane-home-proof__card-wall {
+    grid-template-columns: 1fr;
+  }
+
+  .khadane-home-proof__main-card {
+    min-height: clamp(24rem, 56vw, 34rem);
+  }
+
+  .khadane-home-proof__deck {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .khadane-home-proof__feature {
+    grid-template-columns: 1fr;
+  }
+
+  .khadane-home-proof__feature-copy {
+    border-left: 0;
+    border-top: 1px solid var(--khadane-quarry-gold-12);
+  }
+
+  .khadane-home-proof__feature-copy h3 {
+    max-width: 14ch;
+  }
+
+  .khadane-home-proof__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .khadane-teaser-grid,
+  .khadane-variety-grid,
+  .khadane-format-grid,
+  .khadane-related-grid,
+  .khadane-gallery-category-grid,
+  .khadane-field-notes-grid,
+  .khadane-home-photo-grid,
+  .khadane-tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 820px) {
+  .khadane-section--prose .khadane-prose-container {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .khadane-home-proof__carousel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .khadane-home-proof__shuffle-nav {
+    position: absolute;
+    z-index: 30;
+    top: 50%;
+    width: 2.45rem;
+    height: 3.6rem;
+    background: rgba(250, 247, 239, 0.88);
+    transform: translateY(-50%);
+  }
+
+  .khadane-home-proof__shuffle-nav--prev {
+    left: 1rem;
+  }
+
+  .khadane-home-proof__shuffle-nav--next {
+    right: 1rem;
+  }
+
+  .khadane-home-proof__stage {
+    min-height: clamp(23rem, 78vw, 35rem);
+  }
+
+  .khadane-home-proof__shuffle-card {
+    width: clamp(6.5rem, 20vw, 9.5rem);
+  }
+
+  .khadane-home-proof__shuffle-card.is-active {
+    width: min(78vw, 34rem);
+  }
+
+  .khadane-proof-lightbox__stage {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .khadane-proof-lightbox__nav {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(250, 247, 239, 0.88);
+  }
+
+  .khadane-proof-lightbox__nav--prev {
+    left: 1rem;
+  }
+
+  .khadane-proof-lightbox__nav--next {
+    right: 1rem;
+  }
+
+  .khadane-proof-lightbox__image {
+    height: min(60vh, 36rem);
+  }
+
+  .khadane-hero,
+  .khadane-quarry-hero,
+  .khadane-variety-hero,
+  .khadane-two-col,
+  .khadane-verticals-grid,
+  .khadane-yard-steps,
+  .khadane-photo-grid,
+  .khadane-founding-list {
+    grid-template-columns: 1fr;
+  }
+
+  .khadane-hero,
+  .khadane-quarry-hero,
+  .khadane-variety-hero {
+    padding-top: 6.5rem;
+  }
+
+  .khadane-hero--home {
+    min-height: auto;
+    padding-top: 6.25rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .khadane-hero--home .khadane-hero__image-wrap {
+    min-height: clamp(19rem, 62vw, 28rem);
+  }
+
+  .khadane-hero-scale {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .khadane-tech-spec__row,
+  .khadane-desk-rows__row {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .khadane-home-proof__stage {
+    min-height: clamp(20rem, 92vw, 28rem);
+  }
+
+  .khadane-home-proof__shuffle-card.is-active {
+    width: 82vw;
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='-1'] {
+    transform: translate3d(-50%, -50%, 0) translateX(-43vw) translateY(0.35rem)
+      rotate(-8deg) scale(0.82);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='1'] {
+    transform: translate3d(-50%, -50%, 0) translateX(43vw) translateY(0.35rem)
+      rotate(8deg) scale(0.82);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='-2'],
+  .khadane-home-proof__shuffle-card[data-offset='2'],
+  .khadane-home-proof__shuffle-card[data-offset='-3'],
+  .khadane-home-proof__shuffle-card[data-offset='3'] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .khadane-home-proof__image-label {
+    font-size: 0.56rem;
+  }
+
+  .khadane-home-proof {
+    padding-inline: 1rem;
+  }
+
+  .khadane-home-proof__deck {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .khadane-home-proof__deck .khadane-home-proof-card {
+    --card-rotation: 0deg;
+  }
+
+  .khadane-proof-lightbox {
+    padding: 0.55rem;
+  }
+
+  .khadane-proof-lightbox__topbar {
+    align-items: flex-start;
+  }
+
+  .khadane-proof-lightbox__image {
+    height: min(56vh, 31rem);
+  }
+
+  .khadane-home-proof__feature-image {
+    min-height: 19rem;
+  }
+
+  .khadane-home-proof__feature-copy dl div {
+    grid-template-columns: 1fr;
+  }
+
+  .khadane-home-proof__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .khadane-home-proof-card__content {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .khadane-home-proof__image-label {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .khadane-teaser-grid,
+  .khadane-variety-grid,
+  .khadane-format-grid,
+  .khadane-related-grid,
+  .khadane-gallery-category-grid,
+  .khadane-field-notes-grid,
+  .khadane-home-photo-grid,
+  .khadane-tile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .khadane-button,
+  .khadane-cross-links > *,
+  .khadane-desk-actions > *,
+  .khadane-hero__actions > * {
+    width: 100%;
+  }
+
+  .khadane-hero-scale {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .khadane-hero-scale div {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-right: 0;
+  }
+
+  .khadane-hero-media-caption {
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    font-size: 0.6rem;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────
+   4. ANIMATION 02 — SECTION REVEAL ON SCROLL
+   IntersectionObserver-driven, fires once per section.
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-section-reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity var(--khadane-duration-slow) var(--khadane-ease-out),
+    transform var(--khadane-duration-slow) var(--khadane-ease-out);
+  will-change: opacity, transform;
+}
+
+.khadane-section-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ────────────────────────────────────────────────────────────
+   4. ANIMATION 01 — HERO PARALLAX
+   transform: translateY scroll-driven, 0.4x rate
+   (the scroll handler in the hero component sets the inline transform)
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-hero-image {
+  will-change: transform;
+  transition: transform 0ms linear; /* set by JS, no CSS easing */
+}
+
+.khadane-hero-video {
+  display: block;
+  position: absolute;
+  inset: 0;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ────────────────────────────────────────────────────────────
+   5. ANIMATION 03 — VARIETY CARD HOVER
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-variety-card {
+  transition:
+    transform var(--khadane-duration-normal) var(--khadane-ease-out),
+    box-shadow var(--khadane-duration-normal) var(--khadane-ease-out);
+}
+
+.khadane-variety-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 32px var(--khadane-obsidian-32);
+}
+
+.khadane-variety-card__image {
+  filter: saturate(0.88);
+  transition: filter var(--khadane-duration-normal) var(--khadane-ease-out);
+}
+
+.khadane-variety-card:hover .khadane-variety-card__image {
+  filter: saturate(1);
+}
+
+/* ────────────────────────────────────────────────────────────
+   6. ANIMATION 04 — NAVIGATION UNDERLINE
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-nav__link {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.khadane-nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background-color: var(--khadane-quarry-gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 250ms var(--khadane-ease-out);
+}
+
+.khadane-nav__link:hover::after,
+.khadane-nav__link[aria-current='page']::after {
+  transform: scaleX(1);
+}
+
+/* ────────────────────────────────────────────────────────────
+   7. ANIMATION 06 — STICKY DECISION PANEL
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-decision-panel {
+  position: relative;
+  background: var(--khadane-warm-white);
+  border-bottom: 1px solid var(--khadane-quarry-gold-32);
+  padding: 1.5rem 2rem;
+  z-index: 50;
+  transition:
+    padding var(--khadane-duration-normal) var(--khadane-ease-out),
+    background-color var(--khadane-duration-normal) var(--khadane-ease-out);
+}
+
+.khadane-decision-panel--pinned {
+  position: sticky;
+  top: 0;
+  background: var(--khadane-warm-white);
+  box-shadow: 0 2px 24px var(--khadane-obsidian-32);
+}
+
+.khadane-decision-panel--slim {
+  padding: 0.75rem 2rem;
+}
+
+.khadane-decision-panel__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.khadane-decision-panel__action {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--khadane-obsidian);
+  background: transparent;
+  color: var(--khadane-obsidian);
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--khadane-duration-fast) var(--khadane-ease-out),
+    color var(--khadane-duration-fast) var(--khadane-ease-out);
+}
+
+.khadane-decision-panel__action:hover:not(:disabled) {
+  background: var(--khadane-obsidian);
+  color: var(--khadane-warm-white);
+}
+
+.khadane-decision-panel__action:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.khadane-decision-panel__action--primary {
+  background: var(--khadane-obsidian);
+  color: var(--khadane-warm-white);
+}
+
+.khadane-decision-panel__action--primary:hover {
+  background: var(--khadane-tobacco);
+}
+
+.khadane-decision-panel__action--ghost {
+  border-style: dashed;
+}
+
+.khadane-decision-panel__action--saved {
+  background: var(--khadane-quarry-gold-12);
+  border-color: var(--khadane-quarry-gold);
+  border-style: solid;
+}
+
+.khadane-decision-panel__glance {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--khadane-tobacco);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.4rem;
+}
+
+.khadane-decision-panel__glance-label {
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.khadane-decision-panel__glance-value {
+  font-weight: 500;
+}
+
+/* ────────────────────────────────────────────────────────────
+   8. ANIMATION 07 — SURFACE TILE EXPAND
+   Modal expansion from the click point.
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-tile {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform var(--khadane-duration-fast) var(--khadane-ease-out);
+}
+
+.khadane-tile:hover {
+  transform: scale(1.03);
+}
+
+.khadane-tile-modal {
+  position: fixed;
+  inset: 0;
+  background: var(--khadane-obsidian-72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--khadane-duration-fast) var(--khadane-ease-out);
+}
+
+.khadane-tile-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ────────────────────────────────────────────────────────────
+   9. ANIMATION 11 — LANGUAGE SWITCHER
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-langswitcher {
+  position: relative;
+  display: inline-block;
+}
+
+.khadane-langswitcher__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--khadane-warm-white);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: border-color var(--khadane-duration-fast) var(--khadane-ease-out);
+}
+
+.khadane-langswitcher__trigger:hover {
+  border-color: var(--khadane-quarry-gold-32);
+}
+
+.khadane-langswitcher__chevron {
+  font-size: 0.7em;
+  opacity: 0.7;
+}
+
+.khadane-langswitcher__menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  min-width: 160px;
+  background: var(--khadane-obsidian);
+  border: 1px solid var(--khadane-quarry-gold-32);
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem 0;
+  z-index: 60;
+  opacity: 0;
+  transform: translateY(-8px);
+  animation: khadane-langmenu-in var(--khadane-duration-fast) var(--khadane-ease-out) forwards;
+}
+
+@keyframes khadane-langmenu-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.khadane-langswitcher__option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  color: var(--khadane-warm-white);
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--khadane-duration-fast) var(--khadane-ease-out);
+}
+
+.khadane-langswitcher__option:hover {
+  background: var(--khadane-quarry-gold-12);
+}
+
+.khadane-langswitcher__option--active {
+  color: var(--khadane-quarry-gold);
+}
+
+.khadane-langswitcher__check {
+  color: var(--khadane-quarry-gold);
+  font-size: 0.85em;
+}
+
+/* ────────────────────────────────────────────────────────────
+   10. ANIMATION 13 — SCROLL SNAP FOR QUARRY / YARD
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-scroll-snap {
+  scroll-snap-type: y proximity;
+}
+
+.khadane-scroll-snap > section {
+  scroll-snap-align: start;
+  scroll-margin-top: 4rem;
+}
+
+/* ────────────────────────────────────────────────────────────
+   11. MT DISCLAIMER
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-mt-disclaimer {
+  margin: 4rem auto 2rem;
+  max-width: 720px;
+  padding: 0 2rem;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--khadane-stone-linen);
+  opacity: 0.7;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+/* ────────────────────────────────────────────────────────────
+   12. PLACEHOLDER IMAGE STATES
+   For PhotoSlot placeholders before real photographs land.
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-placeholder {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    var(--khadane-tobacco),
+    var(--khadane-obsidian)
+  );
+  color: var(--khadane-stone-linen);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.khadane-placeholder__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--khadane-quarry-gold);
+  margin-bottom: 0.5rem;
+}
+
+.khadane-placeholder__caption {
+  font-style: italic;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  max-width: 38ch;
+}
+
+/* ────────────────────────────────────────────────────────────
+   13. THE GROUP PAGE VERTICAL CARDS
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-group-vertical {
+  background: var(--khadane-warm-white);
+  padding: 2rem;
+  border: 1px solid var(--khadane-quarry-gold-32);
+  transition:
+    transform var(--khadane-duration-normal) var(--khadane-ease-out),
+    box-shadow var(--khadane-duration-normal) var(--khadane-ease-out);
+}
+
+.khadane-group-vertical:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px var(--khadane-obsidian-32);
+}
+
+.khadane-group-vertical__name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  color: var(--khadane-obsidian);
+  margin: 0;
+}
+
+.khadane-group-vertical__founded {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--khadane-quarry-gold);
+  letter-spacing: 0.04em;
+  margin: 0.25rem 0 1rem;
+}
+
+.khadane-group-vertical__description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--khadane-tobacco);
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* ────────────────────────────────────────────────────────────
+   14. CURSOR-TRAILING GOLD DOT
+   Animation 05 — fires only inside hero photograph regions.
+   The component manages the dot element; CSS handles its appearance.
+   ──────────────────────────────────────────────────────────── */
+
+.khadane-gold-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--khadane-quarry-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 300ms var(--khadane-ease-out);
+  z-index: 200;
+  mix-blend-mode: difference;
+}
+
+.khadane-gold-dot.is-active {
+  opacity: 0.85;
+}
+
+/* ────────────────────────────────────────────────────────────
+   15. SMOOTH SCROLL (Animation 09)
+   ──────────────────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ────────────────────────────────────────────────────────────
+   MOBILE RESPONSIVE PASS — homepage, image deck, and nav frame
+   ──────────────────────────────────────────────────────────── */
+
+[data-site='khadane'],
+[data-site='khadane'] body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.khadane-home-video-hero {
+  min-height: 100svh;
+}
+
+.khadane-home-video-hero__title {
+  text-wrap: balance;
+}
+
+.khadane-home-video-hero__subline {
+  text-wrap: balance;
+}
+
+@media (max-width: 900px) {
+  .khadane-section,
+  .khadane-page-header {
+    padding-block: 3.5rem;
+  }
+
+  .khadane-section--prose {
+    padding-top: 2.5rem;
+  }
+
+  .khadane-section--prose .khadane-prose-container {
+    width: min(100%, 42rem);
+    padding-top: 1.35rem;
+  }
+
+  .khadane-section--home-images {
+    padding-top: 3.25rem;
+  }
+
+  .khadane-home-images__header {
+    width: min(100%, 42rem);
+    text-align: left;
+  }
+
+  .khadane-home-images__header::after {
+    margin-left: 0;
+  }
+
+  .khadane-home-images__subline {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .khadane-home-proof {
+    width: 100%;
+    overflow: hidden;
+    padding-inline: 0;
+  }
+
+  .khadane-home-proof__carousel {
+    width: 100%;
+    gap: 0;
+  }
+
+  .khadane-home-proof__stage {
+    min-height: clamp(25rem, 82vw, 31rem);
+  }
+
+  .khadane-home-proof__shuffle-card.is-active {
+    width: min(82vw, 34rem);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='-1'] {
+    transform: translate3d(-50%, -50%, 0) translateX(-38vw) translateY(0.35rem)
+      rotate(-7deg) scale(0.82);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='1'] {
+    transform: translate3d(-50%, -50%, 0) translateX(38vw) translateY(0.35rem)
+      rotate(7deg) scale(0.82);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='-2'],
+  .khadane-home-proof__shuffle-card[data-offset='2'],
+  .khadane-home-proof__shuffle-card[data-offset='-3'],
+  .khadane-home-proof__shuffle-card[data-offset='3'] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .khadane-home-proof__progress {
+    padding-inline: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .khadane-home-video-hero__title {
+    max-width: 12ch;
+    line-height: 0.98;
+  }
+
+  .khadane-home-video-hero__subline {
+    max-width: 18rem;
+    line-height: 1.6;
+  }
+
+  .khadane-section,
+  .khadane-page-header {
+    padding-block: 3rem;
+  }
+
+  .khadane-prose-container,
+  .khadane-section--prose .khadane-prose-container,
+  .khadane-home-images__header {
+    padding-inline: 1.1rem;
+  }
+
+  .khadane-section--prose .khadane-body-prose,
+  .khadane-section--prose .khadane-body-prose--lead {
+    font-size: 1.08rem;
+    line-height: 1.68;
+  }
+
+  .khadane-home-images__header .khadane-section-title {
+    font-size: 2.25rem;
+    line-height: 0.98;
+  }
+
+  .khadane-home-images__subline {
+    font-size: 0.95rem;
+  }
+
+  .khadane-home-proof__stage {
+    min-height: clamp(21rem, 88vw, 25rem);
+  }
+
+  .khadane-home-proof__shuffle-card {
+    width: 6.25rem;
+  }
+
+  .khadane-home-proof__shuffle-card.is-active {
+    width: min(86vw, 24rem);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='-1'] {
+    opacity: 0.72;
+    transform: translate3d(-50%, -50%, 0) translateX(-43vw) translateY(0.45rem)
+      rotate(-7deg) scale(0.72);
+  }
+
+  .khadane-home-proof__shuffle-card[data-offset='1'] {
+    opacity: 0.72;
+    transform: translate3d(-50%, -50%, 0) translateX(43vw) translateY(0.45rem)
+      rotate(7deg) scale(0.72);
+  }
+
+  .khadane-home-proof__shuffle-nav {
+    top: 50%;
+    width: 2.55rem;
+    height: 2.55rem;
+    border-radius: 999px;
+    background: var(--khadane-warm-white);
+    color: var(--khadane-obsidian);
+    box-shadow: 0 0.85rem 2rem rgba(17, 17, 17, 0.18);
+    font-size: 1.8rem;
+    transform: translateY(-50%);
+  }
+
+  .khadane-home-proof__shuffle-nav--prev {
+    left: 0.85rem;
+  }
+
+  .khadane-home-proof__shuffle-nav--next {
+    right: 0.85rem;
+  }
+
+  .khadane-home-proof-card__content {
+    padding: 0.72rem;
+  }
+
+  .khadane-home-proof__shuffle-card.is-active .khadane-home-proof-card__content {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .khadane-home-proof__shuffle-card.is-active .khadane-eyebrow {
+    max-width: 14ch;
+    text-align: right;
+  }
+}
+
+@media (max-width: 390px) {
+  .khadane-home-proof__stage {
+    min-height: 21.5rem;
+  }
+
+  .khadane-home-proof__shuffle-card.is-active {
+    width: 87vw;
+  }
+
+  .khadane-home-proof__shuffle-nav {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+}
+
+/* ────────────────────────────────────────────────────────────
+   PREFERS-REDUCED-MOTION OVERRIDE
+   Collapses every effect listed above to instant transitions.
+   This is non-negotiable for accessibility.
+   ──────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .khadane-section-reveal,
+  .khadane-section-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .khadane-hero-image {
+    transform: none !important;
+  }
+
+  .khadane-variety-card:hover {
+    transform: none;
+  }
+
+  .khadane-variety-card__image,
+  .khadane-variety-card:hover .khadane-variety-card__image {
+    filter: none;
+  }
+
+  .khadane-gold-dot {
+    display: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "nav": {
+    "collection": "Collezione",
+    "formats": "Formati",
+    "quarry": "La Cava",
+    "yard": "Il Laboratorio",
+    "fieldNotes": "Note di Campo",
+    "group": "Il Gruppo",
+    "gallery": "Galleria",
+    "enquire": "Richiesta",
+    "languageSwitcher": "Lingua"
+  },
+  "actions": {
+    "enquire": "Richiesta",
+    "enquireAboutThis": "Chiedi informazioni su questa pietra",
+    "downloadDatasheet": "Scheda tecnica (PDF)",
+    "requestSample": "Richiedi un campione",
+    "saveToList": "Aggiungi alla lista",
+    "viewAll": "Vedi tutto",
+    "learnMore": "Scopri di più",
+    "backToCollection": "Torna alla Collezione",
+    "backToFormats": "Torna ai Formati",
+    "next": "Avanti",
+    "previous": "Indietro",
+    "close": "Chiudi",
+    "submit": "Invia",
+    "cancel": "Annulla"
+  },
+  "footer": {
+    "copyright": "© 2026 KHADANE™ · Una divisione di Mohan Lal & Sons (Dhakar Stones Group), Bijolia, Rajasthan · Dal 1972",
+    "privacy": "Privacy",
+    "terms": "Termini",
+    "contact": "exports@khadane.com"
+  }
+}

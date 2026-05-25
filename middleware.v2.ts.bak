@@ -1,0 +1,111 @@
+import { NextResponse, type NextRequest } from 'next/server'
+
+/**
+ * Host-based routing middleware.
+ *
+ * Production:
+ *   mohanlalsonsgroup.com/*  → /mls/*  (transparent rewrite, URL stays clean)
+ *   khadane.com/*            → /khadane/*  (transparent rewrite, URL stays clean)
+ *
+ * Local development:
+ *   Set NEXT_PUBLIC_DEV_HOST_MODE=mls or =khadane to lock dev to one site,
+ *   OR use mls.localhost / khadane.localhost (requires /etc/hosts entries).
+ *
+ * Both sites deploy from a single Vercel project with two domain bindings.
+ *
+ * The rewrite is INTERNAL — the user sees mohanlalsonsgroup.com/about,
+ * but Next.js routes from app/mls/about/page.tsx. SEO files like
+ * sitemap.xml, robots.txt, OG images, and favicons are all routed
+ * through the same rewrite so each site gets its own.
+ */
+
+const MLS_HOSTS = new Set([
+  'mohanlalsonsgroup.com',
+  'www.mohanlalsonsgroup.com',
+  'mls.localhost',
+  'mls.localhost:3000',
+])
+
+const KHADANE_HOSTS = new Set([
+  'khadane.com',
+  'www.khadane.com',
+  'khadane.localhost',
+  'khadane.localhost:3000',
+])
+
+export function middleware(request: NextRequest) {
+  const url = request.nextUrl
+  const host = request.headers.get('host')?.toLowerCase() ?? ''
+  const path = url.pathname
+
+  // ─── True bypasses (paths that are NEVER per-site) ─────────────
+  // These resolve to top-level files or Next internals only.
+  if (
+    path.startsWith('/_next') ||
+    path.startsWith('/api') ||
+    path.startsWith('/brand') ||
+    path.startsWith('/img')
+  ) {
+    return NextResponse.next()
+  }
+
+  // Static legacy assets from KHADANE v1 (kept for backward compatibility
+  // of any external links into those exact paths).
+  if (
+    path === '/favicon.ico' ||
+    path === '/apple-touch-icon.svg' ||
+    path === '/favicon.svg' ||
+    path === '/og-image.svg' ||
+    path === '/twitter-card.svg'
+  ) {
+    return NextResponse.next()
+  }
+
+  // Avoid infinite-loop on internal paths.
+  if (path.startsWith('/mls') || path.startsWith('/khadane')) {
+    return NextResponse.next()
+  }
+
+  // ─── Host resolution ────────────────────────────────────────────
+  let target: 'mls' | 'khadane' | null = null
+
+  if (MLS_HOSTS.has(host)) target = 'mls'
+  else if (KHADANE_HOSTS.has(host)) target = 'khadane'
+  else {
+    const devMode = process.env.NEXT_PUBLIC_DEV_HOST_MODE
+    if (devMode === 'mls') target = 'mls'
+    else if (devMode === 'khadane') target = 'khadane'
+    else if (host.startsWith('localhost') || host.startsWith('127.0.0.1')) {
+      target = 'mls' // default dev to MLS
+    }
+  }
+
+  if (!target) return NextResponse.next()
+
+  // ─── Internal rewrite ───────────────────────────────────────────
+  // User URL stays as-is. Next routes from the subdir.
+  // Examples:
+  //   mohanlalsonsgroup.com/             → /mls
+  //   mohanlalsonsgroup.com/about        → /mls/about
+  //   mohanlalsonsgroup.com/sitemap.xml  → /mls/sitemap.xml
+  //   mohanlalsonsgroup.com/robots.txt   → /mls/robots.txt
+  //   mohanlalsonsgroup.com/icon         → /mls/icon
+  //   khadane.com/collection             → /khadane/collection
+  const rewrittenUrl = url.clone()
+  rewrittenUrl.pathname = `/${target}${path === '/' ? '' : path}`
+
+  const response = NextResponse.rewrite(rewrittenUrl)
+  response.headers.set('x-site', target)
+  return response
+}
+
+export const config = {
+  matcher: [
+    /*
+     * Match every path except:
+     * - _next internals (handled inside the function for additional bypasses)
+     * - api routes (handled inside the function so they CAN read headers)
+     */
+    '/((?!_next/static|_next/image).*)',
+  ],
+}
