@@ -46,7 +46,10 @@ export const metadata: Metadata = {
     description: MLS_SITE.description,
   },
   robots: { index: true, follow: true },
-  // icons: auto-discovered from app/mls/icon.tsx + app/mls/apple-icon.tsx
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    apple: '/apple-touch-icon.svg',
+  },
 }
 
 export default function MLSLayout({ children }: { children: React.ReactNode }) {
