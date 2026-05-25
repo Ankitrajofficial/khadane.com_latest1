@@ -56,10 +56,10 @@ export default function Navigation() {
         ].join(' ')}
         data-surface="dark"
       >
-        <div className="max-w-7xl mx-auto px-4 py-2.5 lg:px-6 lg:py-4 flex items-center justify-between gap-4 lg:gap-5">
+        <div className="max-w-7xl mx-auto px-4 py-1.5 lg:px-6 lg:py-4 flex items-center justify-between gap-4 lg:gap-5">
           <Link href="/khadane" aria-label="KHADANE home" className="shrink-0">
             <span className="block lg:hidden">
-              <Wordmark surface="dark" size={96} priority />
+              <Wordmark surface="dark" size={88} priority />
             </span>
             <span className="hidden lg:block">
               <Wordmark surface="dark" size={scrolled ? 118 : 132} priority />
@@ -103,7 +103,7 @@ export default function Navigation() {
             <Search />
             <button
               type="button"
-              className="flex h-9 w-9 flex-col items-center justify-center gap-1.5"
+              className="flex h-8 w-8 flex-col items-center justify-center gap-1.5"
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
