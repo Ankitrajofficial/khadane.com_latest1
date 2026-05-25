@@ -8,9 +8,8 @@ import './globals.css'
  * (Cormorant Garamond + Inter Tight + JetBrains Mono — shared by both sites).
  *
  * Site-specific chrome (Navigation, Footer, per-site metadata) is provided
- * by the route group layouts: app/(mls)/layout.tsx and app/(khadane)/layout.tsx.
- *
- * Host-based routing in middleware.ts decides which route group renders.
+ * by each surface layout. Public traffic is directed to KHADANE through
+ * next.config.js redirects.
  */
 
 export const metadata: Metadata = {

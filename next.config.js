@@ -42,6 +42,26 @@ const nextConfig = {
     ]
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/khadane',
+        permanent: false,
+      },
+      {
+        source: '/mls',
+        destination: '/khadane',
+        permanent: false,
+      },
+      {
+        source: '/mls/:path*',
+        destination: '/khadane',
+        permanent: false,
+      },
+    ]
+  },
+
   experimental: {
     // Next 16 features can be enabled here
   },
